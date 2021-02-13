@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="../styles/style1.css">
+<script src="../scripts/registro_usuario.js"></script>
+<title>Registro</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../index.html">Logo</a>
+    </div>
+    <div class="opciones">
+
+    </div>
+    <div class="cont-cuenta">
+      <div class="cont-c">
+        <a href="#">Iniciar Sesion</a>
+      </div>
+    </div>
+
+  </header>
+  <section>
+    <div class="cont-form">
+      <div class="cont-f">
+        <h1>Registrar Cuenta</h1>
+      <form class="form" id="form-r">
+        <input type="text" name="usuario" placeholder="Usuario" maxlength="19" required>
+        <input type="text" name="nombre" placeholder="Nombre" maxlength="19" required>
+        <input type="text" name="apellido" placeholder="Apellido" maxlength="19" required>
+        <input type="password" name="pw" placeholder="Contraseña" maxlength="16"  minlength="8" required>
+        <input type="email" name="correo" placeholder="Correo Electronico" maxlength="49" required>
+        <input type="tel" name="telefono" placeholder="Numero de Telf ej: 0424-1234567" 
+               pattern="[0-9]{4}-[0-9]{7}" title="ej 0424-1234567" required>
+      </form>
+      </div>
+      <div class="cont-b">
+        <button type="submit" class="boton" form="form-r" id="boton-registrar">REGISTRAR</button>
+      </div>
+      <div class="cont-b">
+        <input type="reset" form="form-r" class="boton" value="RESTABLECER">
+      </div>
+      
+    </div>
+
+  </section>
+  <footer>
+  </footer>
+
+</body>
+</html>
