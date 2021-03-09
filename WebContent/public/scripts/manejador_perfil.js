@@ -16,7 +16,7 @@ window.onload = function cargar(){
     //obtener datos
 
 	
-	fetch('https://practica-web2-2021a.herokuapp.com//Manejadorusuario',{
+	fetch('https://practica-web2-2021a.herokuapp.com/Manejadorusuario',{
         method: 'POST',
     })
     .then(response => response.json())

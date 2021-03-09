@@ -58,7 +58,6 @@ public class Manejadorusuario extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("application/json");
-		response.setHeader("Access-Control-Allow-Origin", "https://practica-web2.herokuapp.com/");
 		PrintWriter out = response.getWriter();	
 		
 		System.out.println("\n------------------------------------------------------------------------"
