@@ -177,6 +177,7 @@ public class Proceso_datosusuario {
 						ps.execute();
 						System.out.println("sentencia ejecutada");
 						s.setAttribute("u", req.getParameter("usuarioActualizado"));
+					        y = ps;
 						ps.close();
 						con.close();
 						return "{\"message\":\"se ha actualizado satisfactoriamente\","
