@@ -167,7 +167,7 @@ window.onload = function cargar(){
                 .then(response => response.json())
                 .then(data => {
                     alert(data.message);
-                    window.location.href = data.redirect;
+                    //window.location.href = data.redirect;
                 })
             } else {
             	alert("No ha ingresado los valores correctamente... ")
