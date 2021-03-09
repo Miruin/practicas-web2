@@ -155,6 +155,8 @@ window.onload = function cargar(){
             var expresion1 = /^([0-9]{4})+(-)+([0-9]{7})$/i;
             var expresion2 = /^[mMfFoO]$/i;
             var expresion3 = /^[a-z|A-Z]{2,59}$/i;
+		
+		console.log(formconfig.get("usuarioActualizado"));
             if (formconfig.get("usuarioActualizado") != "" && formconfig.get("nombreActualizado") != "" &&
             	formconfig.get("apellidoActualizado") != "" && formconfig.get("correoActualizado")  != "" && 
             	expresion.test(formconfig.get("correoActualizado")) && expresion1.test(formconfig.get("telfActualizado")) && 
