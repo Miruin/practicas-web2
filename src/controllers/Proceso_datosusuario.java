@@ -185,7 +185,7 @@ public class Proceso_datosusuario {
 					// TODO Auto-generated catch block
 				System.out.println("error encontrado en el metodo Procesar_setDatos del primer catch en la clase Proceso_datoscliente");
 				e.printStackTrace();
-				return "{\"message\":\"ERROR\","
+				return "{\"message\":\"ERROR asdasdadsad\","
 					+ "\"status\":500}";
 			}
 		} else {
