@@ -14,16 +14,18 @@ import helpers.Prop;
 
 public class Proceso_datosusuario {
 	
-	public static Connection con = Condb.crearCon();
+	public static Connection con = null;
 	public static PreparedStatement ps = null;
     public static ResultSet rs = null;
 
 	public static String Procesar_getDatos(HttpServletRequest req) {
 		
+		
 		String usuario = null, nombre = null, apellido = null, correo = null, telf = null, pais = null, 
 				postal = null, sexo = null;
 		
 		try {
+			con = Condb.crearCon();
 			System.out.println("\nverificando si hay una sesion activa");
 			if (req.getSession(false) != null){
 				System.out.println("hay una sesion activa obteniendo datos....");
@@ -119,7 +121,7 @@ public class Proceso_datosusuario {
 		System.out.println("\nverificando si hay una sesion activa");
 		if (req.getSession(false) != null){
 			try {
-				
+			    con = Condb.crearCon();
 			    System.out.println("hay una sesion activa...");
 		        HttpSession s = req.getSession(false);
 		        
