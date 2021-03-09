@@ -42,7 +42,6 @@ public class Registro extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		response.setContentType("application/json");
-		//response.setHeader("Access-Control-Allow-Origin", "https://practica-web2.herokuapp.com/");
 		PrintWriter out = response.getWriter();
 		System.out.println("\n------------------------------------------------------------------------"
 				         + "\niniciando proceso de registro1");
