@@ -63,7 +63,7 @@ public class Manejadorusuario extends HttpServlet {
 		System.out.println("\n------------------------------------------------------------------------"
 				         + "\niniciando proceso para actualizar datos del usuario"
 				  
-				  +"\n "+request.getParameter("usuarioActualizado")+"");
+				  +"\n "+request.getParameter("usuarioA")+"");
 		out.println(Proceso_datosusuario.Procesar_setDatos(request));
 	}
 
