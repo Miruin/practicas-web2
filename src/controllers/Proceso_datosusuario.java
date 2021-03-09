@@ -117,9 +117,6 @@ public class Proceso_datosusuario {
     
 	public static String Procesar_setDatos(HttpServletRequest req){
 		
-		int x = 0 ;
-		String y = req.getParameter("usuarioActualizado");
-		int z = 0;
 		System.out.println("\nverificando si hay una sesion activa");
 		if (req.getSession(false) != null){
 			try {
@@ -131,7 +128,7 @@ public class Proceso_datosusuario {
 		        
 		        if(s.getAttribute("u").equals(req.getParameter("usuarioActualizado"))) {
 		        	
-				x = 1;
+				
 		        	ps = con.prepareStatement(Prop.getDatosProp("q5.1"));
 					ps.setString(1, req.getParameter("nombreActualizado"));
 					ps.setString(2, req.getParameter("apellidoActualizado"));
@@ -154,7 +151,6 @@ public class Proceso_datosusuario {
 		        	
 		        	if(Autentificacion.AutRegistro(req.getParameter("usuarioActualizado"), con)) {
 		        		
-					x = 2;
 		        		con.close();
 						System.out.println("el usuario ya existe");
 						return "{\"message\":\"el usuario ya existe\","
@@ -163,7 +159,6 @@ public class Proceso_datosusuario {
 						
 		        	} else {
 		        		
-					x = 3;
 		        		ps = con.prepareStatement(Prop.getDatosProp("q5"));
 						ps.setString(1, req.getParameter("usuarioActualizado"));
 						ps.setString(2, req.getParameter("nombreActualizado"));
@@ -175,11 +170,9 @@ public class Proceso_datosusuario {
 						ps.setString(8, req.getParameter("sexo"));
 						ps.setString(9, (String) s.getAttribute("u"));
 						System.out.println("preparando sentencia sql "+ps);
-					        z = 2;
 						ps.execute();
 						System.out.println("sentencia ejecutada");
 						s.setAttribute("u", req.getParameter("usuarioActualizado"));
-					        z = 3;
 						ps.close();
 						con.close();
 						return "{\"message\":\"se ha actualizado satisfactoriamente\","
@@ -192,7 +185,7 @@ public class Proceso_datosusuario {
 					// TODO Auto-generated catch block
 				System.out.println("error encontrado en el metodo Procesar_setDatos del primer catch en la clase Proceso_datoscliente");
 				e.printStackTrace();
-				return "{\"message\":\"ERROR, "+e+","+x+", "+z+"\","
+				return "{\"message\":\"ERROR, "+e+"\","
 					+ "\"status\":500}";
 			}
 		} else {
