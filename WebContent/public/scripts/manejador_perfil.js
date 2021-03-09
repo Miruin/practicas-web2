@@ -150,19 +150,21 @@ window.onload = function cargar(){
 
 
         btnActualizar.onclick = function ActualizarPerfil() {
-            var formconfig = new FormData(formConfig);
+            var formcf = new FormData(formConfig);
             var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
             var expresion1 = /^([0-9]{4})+(-)+([0-9]{7})$/i;
             var expresion2 = /^[mMfFoO]$/i;
             var expresion3 = /^[a-z|A-Z]{2,59}$/i;
-            if (formconfig.get("usuarioActualizado") != "" && formconfig.get("nombreActualizado") != "" &&
-            	formconfig.get("apellidoActualizado") != "" && formconfig.get("correoActualizado")  != "" && 
-            	expresion.test(formconfig.get("correoActualizado")) && expresion1.test(formconfig.get("telfActualizado")) && 
-            	expresion2.test(formconfig.get("sexo")) && expresion3.test(formconfig.get("pais"))){
+		
+		
+            if (formcf.get("usuarioActualizado") != "" && formcf.get("nombreActualizado") != "" &&
+            	formcf.get("apellidoActualizado") != "" && formcf.get("correoActualizado")  != "" && 
+            	expresion.test(formcf.get("correoActualizado")) && expresion1.test(formcf.get("telfActualizado")) && 
+            	expresion2.test(formcf.get("sexo")) && expresion3.test(formcf.get("pais"))){
             	
                 fetch('https://practica-web2-2021a.herokuapp.com/Manejadorusuario',{
                     method: 'PUT',
-                    body: formconfig
+                    body: formcf
                     })
                 .then(response => response.json())
                 .then(data => {
