@@ -104,8 +104,8 @@ window.onload = function cargar(){
                    <div id="form-content">
                    
                    <div class="form-part">
-                       <label for="usuarioActualizado">Usuario</label>
-                       <input type="text" name="usuarioActualizado" value="${usuario}" maxlength="19">
+                       <label for="usuarioA">Usuario</label>
+                       <input type="text" name="usuarioA" value="${usuario}" maxlength="19">
                        <label for="nombreActualizado">Nombre</label>
                        <input type="text" name="nombreActualizado" value="${nombre}" maxlength="19">
                        <label for="apellidoActualizado">Apellido</label>
@@ -157,11 +157,12 @@ window.onload = function cargar(){
             var expresion3 = /^[a-z|A-Z]{2,59}$/i;
 		
 		
-            if (formconfig.get("usuarioActualizado") != "" && formconfig.get("nombreActualizado") != "" &&
+            if (formconfig.get("usuarioA") != "" && formconfig.get("nombreActualizado") != "" &&
             	formconfig.get("apellidoActualizado") != "" && formconfig.get("correoActualizado")  != "" && 
             	expresion.test(formconfig.get("correoActualizado")) && expresion1.test(formconfig.get("telfActualizado")) && 
             	expresion2.test(formconfig.get("sexo")) && expresion3.test(formconfig.get("pais"))){
             	
+		console.log(formconfig.get("usuarioA"));
                 fetch('https://practica-web2-2021a.herokuapp.com/Manejadorusuario',{
                     method: 'PUT',
                     body: formconfig
