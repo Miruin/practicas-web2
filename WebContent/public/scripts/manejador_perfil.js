@@ -161,9 +161,9 @@ window.onload = function cargar(){
             	formconfig.get("apellidoActualizado") != "" && formconfig.get("correoActualizado")  != "" && 
             	expresion.test(formconfig.get("correoActualizado")) && expresion1.test(formconfig.get("telfActualizado")) && 
             	expresion2.test(formconfig.get("sexo")) && expresion3.test(formconfig.get("pais"))){
-            	
+            	console.log(formconfig);
                 fetch('https://practica-web2-2021a.herokuapp.com/Actdatos',{
-                    method: 'PUT',
+                    method: 'POST',
                     body: formconfig
                     })
                 .then(response => response.json())
