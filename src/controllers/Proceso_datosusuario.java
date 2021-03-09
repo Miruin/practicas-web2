@@ -119,6 +119,7 @@ public class Proceso_datosusuario {
 		
 		int x = 0 ;
 		String y = req.getParameter("usuarioActualizado");
+		String z = null;
 		System.out.println("\nverificando si hay una sesion activa");
 		if (req.getSession(false) != null){
 			try {
@@ -177,7 +178,7 @@ public class Proceso_datosusuario {
 						ps.execute();
 						System.out.println("sentencia ejecutada");
 						s.setAttribute("u", req.getParameter("usuarioActualizado"));
-					        y = (String) ps;
+					        z = ps;
 						ps.close();
 						con.close();
 						return "{\"message\":\"se ha actualizado satisfactoriamente\","
@@ -190,7 +191,7 @@ public class Proceso_datosusuario {
 					// TODO Auto-generated catch block
 				System.out.println("error encontrado en el metodo Procesar_setDatos del primer catch en la clase Proceso_datoscliente");
 				e.printStackTrace();
-				return "{\"message\":\"ERROR, "+e+","+x+", "+y+"\","
+				return "{\"message\":\"ERROR, "+e+","+x+", "+z+"\","
 					+ "\"status\":500}";
 			}
 		} else {
