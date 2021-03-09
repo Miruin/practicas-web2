@@ -13,7 +13,6 @@ public class Prop {
 		try {
 			
 			InputStream is = new FileInputStream("src/helpers/SentenciasSQL.properties");
-			//InputStream is = new FileInputStream("C:\\Users\\Faria\\Desktop\\WorkspaceJEE\\Web2_practica_2021A\\src\\helpers\\SentenciasSQL.properties");
 			p.load(is);
 			return p.getProperty(llave);
 			

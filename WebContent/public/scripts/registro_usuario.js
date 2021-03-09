@@ -14,8 +14,8 @@ window.onload = function cargar() {
     	form.get("pw").length > 8 && 
     	expresion1.test(form.get("telefono")) ){
 
-    	//'https://practica-web2-2021a.herokuapp.com/Registro'
-    	//'http://localhost:9090/Web2_practica_2021A/Registro'
+ 
+    
         fetch('https://practica-web2-2021a.herokuapp.com/Registro',{
           method: 'POST',
           body: form

@@ -10,28 +10,32 @@ import helpers.Hashing;
 import helpers.Prop;
 
 public class Proceso_registro {
+	
+	public static Connection con = null;
+	public static PreparedStatement ps = null;
 
 	public static String Procesar(String usuario, String nombre, String apellido, 
 			String pw, String telf, String correo) {
 		
-		String hpw = Hashing.hashPW(pw);
-		
 		
 		try {
 			
+			con = Condb.crearCon();
+			
+			String hpw = Hashing.hashPW(pw);
 			
 			System.out.println("\nverificando si ya existe el usuario");
-			if(Autentificacion.AutRegistro(usuario)) {
+			if(Autentificacion.AutRegistro(usuario, con)) {
 				
+				con.close();
 				System.out.println("el usuario ya existe");
-				return "{\"message\":\"el usuario ya existe\", \"status\": 503}";
+				return "{\"message\":\"el usuario ya existe\", \"status\": 400}";
 				
 			} else {
 				
 				System.out.println("el usuario ingresado no exite preparando conexion "
 						+ "a la base de datos para agregar el nuevo usuario");
-				Connection con = Condb.crearCon();
-				PreparedStatement ps = con.prepareStatement(Prop.getDatosProp("q2"));
+				ps = con.prepareStatement(Prop.getDatosProp("q2"));
 				ps.setString(1, usuario);
 				ps.setString(2, nombre);
 				ps.setString(3, apellido);

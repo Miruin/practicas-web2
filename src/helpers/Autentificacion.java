@@ -8,16 +8,14 @@ import java.sql.SQLException;
 
 public class Autentificacion {
 	
-	public static Connection con = null;
 	public static PreparedStatement ps = null;
 	
 	
-	public static Boolean AutRegistro(String usuario) {
+	public static Boolean AutRegistro(String usuario, Connection con) {
 		
 		try {
 			
 			System.out.println("\nestableciendo conexion con la base de datos");
-			con = Condb.crearCon();
 			ps = con.prepareStatement(Prop.getDatosProp("q1"));
 			ps.setString(1, usuario);
 			System.out.println("preparando sentencia sql "+ps);
@@ -28,14 +26,12 @@ public class Autentificacion {
 				
 				System.out.println("usuario encontrado en la base de datos\n");
 				ps.close();
-				con.close();
 				return true;
 				
 			} else {
 				
 				System.out.println("no se ha encontrado el usuario en la base de datos\n");
 				ps.close();
-				con.close();
 				return false;
 		    }
 			
@@ -45,16 +41,13 @@ public class Autentificacion {
 			return null;
 		}
 	}
-	/*
-	public static Boolean AutLogin(String usuario, String pw) {
+	public static Boolean AutLogin(String usuario, String pw, Connection con) {
 		
 		try {
 			
 			String hpw = Hashing.hashPW(pw);
 			
 		    
-			System.out.println("\nestableciendo conexion con la base de datos");
-			con = Condb.crearCon();
 			ps = con.prepareStatement(Prop.getDatosProp("q3"));
 			ps.setString(1, usuario);
 			ps.setString(2, hpw);
@@ -66,14 +59,12 @@ public class Autentificacion {
 				
 				System.out.println("usuario encontrado en la base de datos\n");
 				ps.close();
-				con.close();
 				return true;
 				
 			} else {
 				
 				System.out.println("no se ha encontro el usuario en la base de datos\n");
 				ps.close();
-				con.close();
 				return false;
 		    }
 			
@@ -83,6 +74,6 @@ public class Autentificacion {
 			e.printStackTrace();
 			return null;
 		}
-	}*/
+	}
 
 }

@@ -1,0 +1,12 @@
+CREATE TABLE public.usuarios (
+                nick_usuario VARCHAR(20) NOT NULL,
+                nombre_usuario VARCHAR(20) NOT NULL,
+                apellido_usuario VARCHAR(20) NOT NULL,
+                password_usuario VARCHAR(70) NOT NULL,
+                correo_usuario VARCHAR(50) NOT NULL,
+                telf_usuario VARCHAR(15) NOT NULL,
+                pais_usuario VARCHAR(60),
+                postal_usuario VARCHAR(15),
+                sexo_usuario VARCHAR(2),
+                CONSTRAINT usuarios_pk PRIMARY KEY (nick_usuario)
+)
