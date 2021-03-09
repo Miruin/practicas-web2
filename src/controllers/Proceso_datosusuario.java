@@ -175,7 +175,7 @@ public class Proceso_datosusuario {
 						ps.setString(8, req.getParameter("sexo"));
 						ps.setString(9, (String) s.getAttribute("u"));
 						System.out.println("preparando sentencia sql "+ps);
-					        z=2
+					        z = 2;
 						ps.execute();
 						System.out.println("sentencia ejecutada");
 						s.setAttribute("u", req.getParameter("usuarioActualizado"));
