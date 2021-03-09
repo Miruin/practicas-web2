@@ -45,21 +45,7 @@ public class Actdatos extends HttpServlet {
 		PrintWriter out = response.getWriter();	
 		
 		System.out.println("\n------------------------------------------------------------------------"
-				         + "\niniciando proceso para actualizar datos del usuario"
-				         + "\n"+request.getParameter("usuarioActualizado")+"");
-		out.println(Proceso_datosusuario.Procesar_setDatos(request));
-	}
-
-	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();	
-		
-		System.out.println("\n------------------------------------------------------------------------"
-				         + "\niniciando proceso para actualizar datos del usuario"
-				         + "\n"+request.getParameter("usuarioActualizado")+"");
+				         + "\niniciando proceso para actualizar datos del usuario");
 		out.println(Proceso_datosusuario.Procesar_setDatos(request));
 	}
 

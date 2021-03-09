@@ -14,7 +14,7 @@ import helpers.Prop;
 
 public class Proceso_datosusuario {
 	
-	public static Connection con = null;
+	public static Connection con = Condb.crearCon();
 	public static PreparedStatement ps = null;
     public static ResultSet rs = null;
 
@@ -24,8 +24,6 @@ public class Proceso_datosusuario {
 				postal = null, sexo = null;
 		
 		try {
-			
-			con = Condb.crearCon();
 			System.out.println("\nverificando si hay una sesion activa");
 			if (req.getSession(false) != null){
 				System.out.println("hay una sesion activa obteniendo datos....");
@@ -84,8 +82,6 @@ public class Proceso_datosusuario {
 			System.out.println("\nhay una sesion activa ");
 			
 			try {
-				
-				con = Condb.crearCon();
 				System.out.println("preparando datos para eliminar informacion en la tabla usuarios");
 				ps = con.prepareStatement(Prop.getDatosProp("q6"));
 				ps.setString(1, (String) req.getSession(false).getAttribute("u"));
@@ -123,8 +119,6 @@ public class Proceso_datosusuario {
 		System.out.println("\nverificando si hay una sesion activa");
 		if (req.getSession(false) != null){
 			try {
-				
-				con = Condb.crearCon();
 				
 			    System.out.println("hay una sesion activa...");
 		        HttpSession s = req.getSession(false);

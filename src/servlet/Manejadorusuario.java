@@ -54,18 +54,6 @@ public class Manejadorusuario extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
-	 */
-	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("application/json");
-		PrintWriter out = response.getWriter();	
-		
-		System.out.println("\n------------------------------------------------------------------------"
-				         + "\niniciando proceso para actualizar datos del usuario");
-		out.println(Proceso_datosusuario.Procesar_setDatos(request));
-	}
-
-	/**
 	 * @see HttpServlet#doDelete(HttpServletRequest, HttpServletResponse)
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

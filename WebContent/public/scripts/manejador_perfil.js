@@ -39,6 +39,8 @@ window.onload = function cargar(){
     	if(sexo == "null"){
         	sexo= "o"
         }
+
+  
     	
     	if(data.status == 200){
     		
