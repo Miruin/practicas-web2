@@ -161,7 +161,7 @@ window.onload = function cargar(){
             	expresion2.test(formconfig.get("sexo")) && expresion3.test(formconfig.get("pais"))){
             	
                 fetch('https://practica-web2-2021a.herokuapp.com/Actdatos',{
-                    method: 'PUT',
+                    method: 'POST',
                     body: formconfig
                     })
                 .then(response => response.json())
